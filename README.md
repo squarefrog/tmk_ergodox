@@ -7,7 +7,7 @@ This repository is a restructure of the [cub-uanic](https://github.com/cub-uanic
 Support for the following layouts are available out of the box:
 
 - [x] QWERTY: `keymap_qwerty.c`
-- [ ] Colemak
+- [x] Colemak: `keymap_colemak.c`
 - [ ] Dvorak
 - [ ] Workman
 

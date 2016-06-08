@@ -54,7 +54,14 @@ void show_layer_led(uint32_t layer)
  */
 void hook_layer_change(uint32_t layer_state)
 {
-    show_layer_led(default_layer_state | layer_state);
+    switch (layer_state) {
+        case 1:
+            show_layer_led(default_layer_state);
+            break;
+        default:
+            show_layer_led(layer_state);
+            break;
+    }
 }
 
 /*
@@ -62,7 +69,7 @@ void hook_layer_change(uint32_t layer_state)
  */
 void hook_default_layer_change(uint32_t layer_state)
 {
-    show_layer_led(default_layer_state | layer_state);
+    show_layer_led(default_layer_state);
 }
 
 const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -225,8 +232,8 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |  Tab   |   Q  |   W  |   E  |   R  |   T  | FN21 |           |  ]   |   Y  |   U  |   I  |   O  |   P  |   \    |
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
      * | LCtrl  |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   '    |
-     * |--------+------+------+------+------+------| FN28 |           |  L0  |------+------+------+------+------+--------|
-     * | LShift |   Z  |   X  |   C  |   V  |   B  |  (~) |           |      |   N  |   M  |   ,  |   .  |   /  | RShift |
+     * |--------+------+------+------+------+------|      |           |  L0  |------+------+------+------+------+--------|
+     * | LShift |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  | RShift |
      * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
      *   | LCtrl| LAlt | LGui |      |      |                                       |      |      | RAlt | RGui | RCtrl |
      *   `----------------------------------'                                       `----------------------------------'
@@ -262,17 +269,19 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 };
 
-/* id for user defined functions */
+/* Name user defined functions here */
 enum function_id {
     TEENSY_KEY,
 };
 
+/* Name user defined macros here */
 enum macro_id {
     GOOD_GAME,
 };
 
 /*
- * Fn action definition - 32 Fn can be defined at most
+ * Fn action definitions.
+ * A maximum of 32 actions can be defined.
  */
 const uint16_t PROGMEM fn_actions[] = {
     // Layer shifting

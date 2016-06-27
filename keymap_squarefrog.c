@@ -189,7 +189,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *   |      |      | Play |  RW  |  FF  |                                       |      |      |      |      |      |
      *   `----------------------------------'                                       `----------------------------------'
      *                                        ,-------------.       ,-------------.
-     *                                        |      |      |       |      |      |
+     *                                        |      |      |       | Home |  End |
      *                                 ,------|------|------|       |------+------+------.
      *                                 |      |      |      |       |      |      |      |
      *                                 |      |      |------|       |------|      |      |
@@ -214,7 +214,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                 LEFT,DOWN,UP,  RGHT,TRNS,TRNS,
            FN1, TRNS,MUTE,TRNS,TRNS,TRNS,TRNS,
                      TRNS,TRNS,TRNS,TRNS,TRNS,
-        TRNS,TRNS,
+        HOME,END,
         TRNS,
         TRNS,TRNS,TRNS
     ),

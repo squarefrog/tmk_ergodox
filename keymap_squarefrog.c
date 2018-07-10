@@ -283,7 +283,7 @@ enum macro_id {
  * Fn action definitions.
  * A maximum of 32 actions can be defined.
  */
-const uint16_t PROGMEM fn_actions[] = {
+const action_t PROGMEM fn_actions[] = {
     // Layer shifting
     [0] = ACTION_DEFAULT_LAYER_SET(0),             // Switch to Layer 0
     [1] = ACTION_DEFAULT_LAYER_SET(1),             // Switch to Layer 1

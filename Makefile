@@ -42,7 +42,7 @@
 TARGET = ergodox_lufa
 
 # Directory common source filess exist
-TMK_DIR = tmk_core
+TMK_DIR = tmk_keyboard/tmk_core
 
 # Directory keyboard dependent files exist
 TARGET_DIR = .
